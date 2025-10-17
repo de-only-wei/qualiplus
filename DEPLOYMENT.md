@@ -39,11 +39,13 @@ git push -u origin main
 ### 🔐 If you need authentication:
 
 **Option A: Personal Access Token (Recommended)**
+
 1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
 2. Generate new token with `repo` permissions
 3. Use the token as your password when pushing
 
 **Option B: SSH Key**
+
 1. Generate SSH key: `ssh-keygen -t ed25519 -C "your_email@example.com"`
 2. Add to GitHub: Settings → SSH and GPG keys → New SSH key
 3. Use SSH URL: `git remote set-url origin git@github.com:YOUR_USERNAME/qualiplus.git`
@@ -67,11 +69,13 @@ git push -u origin main
 ### Environment Variables (Optional)
 
 If you need environment variables later:
+
 - Add them in Vercel Dashboard → Project → Settings → Environment Variables
 
 ## ✨ Your Site Will Be Live!
 
 After deployment, Vercel will provide you with:
+
 - **Production URL**: `https://qualiplus.vercel.app` (or custom domain)
 - **Preview URLs**: For every push to branches
 - **Automatic Deployments**: Every push to `main` auto-deploys
@@ -79,6 +83,7 @@ After deployment, Vercel will provide you with:
 ## 🔄 Continuous Deployment
 
 From now on:
+
 1. Make changes locally
 2. Commit: `git add . && git commit -m "your message"`
 3. Push: `git push origin main`
@@ -118,17 +123,20 @@ git branch
 ## 🆘 Troubleshooting
 
 ### Push rejected?
+
 ```bash
 git pull origin main --rebase
 git push origin main
 ```
 
 ### Wrong remote URL?
+
 ```bash
 git remote set-url origin YOUR_CORRECT_URL
 ```
 
 ### Vercel deployment failed?
+
 - Check build logs in Vercel dashboard
 - Ensure all dependencies are in `package.json`
 - Verify Node.js version compatibility
@@ -143,9 +151,9 @@ git remote set-url origin YOUR_CORRECT_URL
 ---
 
 **Need help?** Check:
+
 - [Vercel Documentation](https://vercel.com/docs)
 - [Next.js Deployment](https://nextjs.org/docs/deployment)
 - [GitHub Guides](https://guides.github.com/)
 
 Good luck with your deployment! 🚀
-
