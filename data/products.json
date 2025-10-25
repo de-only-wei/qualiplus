@@ -1,0 +1,174 @@
+{
+  "products": [
+    {
+      "id": "dust-cartridges",
+      "slug": "dust-cartridges",
+      "name": "Dust Cartridges",
+      "category": "dust",
+      "shortDescription": "High-efficiency dust filtration cartridges designed for industrial applications.",
+      "fullDescription": "Our premium dust cartridges provide superior filtration performance for demanding industrial environments. Engineered with advanced materials including gauze, gabardine, and solid concrete layers, these cartridges deliver exceptional dust capture efficiency while maintaining optimal airflow. Perfect for manufacturing facilities, workshops, and heavy-duty applications.",
+      "images": ["/gauze-00.jpeg", "/gauze-01.jpeg"],
+      "tags": ["Industrial Grade", "High Efficiency", "Multi-Layer"],
+      "specifications": {
+        "title": "Technical Specifications",
+        "description": "Advanced multi-layer filtration system featuring gauze, gabardine, and solid concrete construction. Designed for maximum dust capture efficiency and extended service life in demanding industrial environments.",
+        "layers": ["gauze", "gabardine", "solid concrete"],
+        "features": [
+          "High dust holding capacity",
+          "Easy installation and replacement",
+          "Durable construction",
+          "Cost-effective operation"
+        ]
+      },
+      "relatedProducts": ["pleated-dust-filters", "bag-filters", "hepa-filters"]
+    },
+    {
+      "id": "pleated-dust-filters",
+      "slug": "pleated-dust-filters",
+      "name": "Pleated Dust Filters",
+      "category": "dust",
+      "shortDescription": "Space-saving pleated design for enhanced filtration surface area.",
+      "fullDescription": "Our pleated dust filters maximize filtration efficiency through an innovative folded design that increases surface area while maintaining a compact footprint. Ideal for applications requiring high dust capture rates with minimal pressure drop.",
+      "images": ["/placeholder-product.jpg"],
+      "tags": ["Space Efficient", "High Surface Area", "Low Pressure Drop"],
+      "specifications": {
+        "title": "Technical Specifications",
+        "description": "Pleated design with reinforced media for extended service life. Optimized pleat spacing ensures consistent airflow and maximum dust loading capacity.",
+        "layers": ["synthetic media", "support wire", "outer mesh"],
+        "features": [
+          "Increased surface area",
+          "Extended filter life",
+          "Consistent airflow",
+          "Versatile applications"
+        ]
+      },
+      "relatedProducts": ["dust-cartridges", "bag-filters", "panel-filters"]
+    },
+    {
+      "id": "bag-filters",
+      "slug": "bag-filters",
+      "name": "Bag Filters",
+      "category": "dust",
+      "shortDescription": "Heavy-duty bag filters for large-scale dust collection systems.",
+      "fullDescription": "Industrial-strength bag filters designed for high-volume dust collection applications. These durable filters provide reliable performance in the most challenging environments, with easy maintenance and long service intervals.",
+      "images": ["/placeholder-product.jpg"],
+      "tags": ["Heavy Duty", "High Volume", "Easy Maintenance"],
+      "specifications": {
+        "title": "Technical Specifications",
+        "description": "Robust bag construction with reinforced seams and secure mounting systems. Available in various materials to suit different applications and temperature ranges.",
+        "layers": ["polyester felt", "nomex", "ptfe membrane"],
+        "features": [
+          "High dust capacity",
+          "Temperature resistant",
+          "Long service life",
+          "Quick replacement"
+        ]
+      },
+      "relatedProducts": [
+        "dust-cartridges",
+        "pleated-dust-filters",
+        "cage-systems"
+      ]
+    },
+    {
+      "id": "activated-carbon-water-filters",
+      "slug": "activated-carbon-water-filters",
+      "name": "Activated Carbon Water Filters",
+      "category": "water",
+      "shortDescription": "Premium activated carbon filters for superior water purification.",
+      "fullDescription": "Our activated carbon water filters effectively remove chlorine, odors, taste, and organic contaminants from water. Using high-grade activated carbon with exceptional adsorption capacity, these filters ensure clean, fresh-tasting water for residential and commercial applications.",
+      "images": ["/placeholder-product.jpg"],
+      "tags": ["Water Purification", "Chlorine Removal", "Taste & Odor"],
+      "specifications": {
+        "title": "Technical Specifications",
+        "description": "High-performance activated carbon media with excellent adsorption characteristics. NSF certified materials ensure safe and effective water treatment.",
+        "layers": ["pre-filter", "activated carbon block", "post-filter"],
+        "features": [
+          "Chlorine removal",
+          "Odor elimination",
+          "VOC reduction",
+          "NSF certified"
+        ]
+      },
+      "relatedProducts": [
+        "sediment-water-filters",
+        "reverse-osmosis-systems",
+        "uv-water-purifiers"
+      ]
+    },
+    {
+      "id": "sediment-water-filters",
+      "slug": "sediment-water-filters",
+      "name": "Sediment Water Filters",
+      "category": "water",
+      "shortDescription": "Multi-stage sediment filtration for clean, particle-free water.",
+      "fullDescription": "Protect your water systems and appliances with our high-quality sediment filters. Designed to remove sand, silt, rust, and other particulate matter, these filters provide essential pre-filtration for your water treatment system.",
+      "images": ["/placeholder-product.jpg"],
+      "tags": ["Particle Removal", "Pre-Filtration", "System Protection"],
+      "specifications": {
+        "title": "Technical Specifications",
+        "description": "Graded density filtration media captures particles from coarse to fine. Available in various micron ratings to match specific application requirements.",
+        "layers": [
+          "outer sediment layer",
+          "middle filtration layer",
+          "inner core"
+        ],
+        "features": [
+          "Multiple micron ratings",
+          "High dirt holding capacity",
+          "Low pressure drop",
+          "Equipment protection"
+        ]
+      },
+      "relatedProducts": [
+        "activated-carbon-water-filters",
+        "whole-house-filters",
+        "inline-filters"
+      ]
+    },
+    {
+      "id": "reverse-osmosis-systems",
+      "slug": "reverse-osmosis-systems",
+      "name": "Reverse Osmosis Systems",
+      "category": "water",
+      "shortDescription": "Advanced RO systems for ultra-pure water filtration.",
+      "fullDescription": "Experience the highest level of water purification with our reverse osmosis systems. These comprehensive filtration systems remove up to 99% of contaminants including heavy metals, fluoride, and dissolved solids, delivering ultra-pure drinking water.",
+      "images": ["/placeholder-product.jpg"],
+      "tags": ["Ultra Pure", "Multi-Stage", "99% Removal"],
+      "specifications": {
+        "title": "Technical Specifications",
+        "description": "Complete multi-stage filtration system with high-efficiency RO membrane. Includes pre-filters, RO membrane, and post-filters for comprehensive water treatment.",
+        "layers": [
+          "sediment pre-filter",
+          "carbon pre-filter",
+          "RO membrane",
+          "carbon post-filter",
+          "remineralization stage"
+        ],
+        "features": [
+          "99% contaminant removal",
+          "Low wastewater ratio",
+          "Automatic shut-off",
+          "Easy maintenance"
+        ]
+      },
+      "relatedProducts": [
+        "activated-carbon-water-filters",
+        "sediment-water-filters",
+        "storage-tanks"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "dust",
+      "name": "Dust Filters",
+      "description": "Industrial-grade dust filtration solutions"
+    },
+    {
+      "id": "water",
+      "name": "Water Filters",
+      "description": "Comprehensive water purification systems"
+    }
+  ]
+}

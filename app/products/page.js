@@ -1,20 +1,38 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
 import ScrollReveal from "@/components/ScrollReveal";
+import ProductListCard from "@/components/ProductListCard";
+import { getAllProducts } from "@/lib/products";
 
 export default function ProductsPage() {
   const [activeFilter, setActiveFilter] = useState("dust");
-  const products = Array(9).fill(null);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const allProducts = getAllProducts();
+
+  // Filter products based on category and search query
+  const filteredProducts = allProducts.filter((product) => {
+    const matchesCategory = product.category === activeFilter;
+    const matchesSearch =
+      searchQuery === "" ||
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.shortDescription
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
+      product.tags.some((tag) =>
+        tag.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <main className="min-h-screen pt-32 pb-20">
       <HeroSection
         highlightedText="Our Products"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum pretium urna et euismod. Donec commodo sagittis molestie. Quisque sollicitudin dui id leo maximus rhoncus. Nulla facilisi. Morbi ac neque quis urna luctus luctus vitae nec mi."
+        description="Explore our comprehensive range of industrial filtration solutions. From high-efficiency dust cartridges and pleated filters for air purification to activated carbon and reverse osmosis systems for water treatment, each product is engineered for superior performance and long-lasting reliability in demanding applications."
         minHeight="py-24"
         showWave={false}
       />
@@ -27,6 +45,8 @@ export default function ProductsPage() {
               <input
                 type="text"
                 placeholder="Search Keyword"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="flex-1 px-8 py-4 rounded-full focus:outline-none text-gray-700 placeholder-gray-400"
               />
               <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95">
@@ -74,33 +94,24 @@ export default function ProductsPage() {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((_, index) => (
-            <ScrollReveal
-              key={index}
-              animation="scaleIn"
-              delay={index * 0.05}
-              threshold={0.2}
-            >
-              <Link
-                href={index === 0 ? "/products/dust-cartridges" : "#"}
-                className="group block"
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product, index) => (
+              <ScrollReveal
+                key={product.id}
+                animation="scaleIn"
+                delay={index * 0.05}
+                threshold={0.2}
               >
-                <div className="aspect-square bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-3xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-4 border-blue-600 hover:border-blue-400 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="w-full h-full flex items-center justify-center text-white relative z-10">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">
-                        Product {index + 1}
-                      </div>
-                      <div className="text-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        View Details →
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </ScrollReveal>
-          ))}
+                <ProductListCard product={product} />
+              </ScrollReveal>
+            ))
+          ) : (
+            <div className="col-span-full text-center py-20">
+              <p className="text-gray-500 text-xl">
+                No products found matching your search.
+              </p>
+            </div>
+          )}
         </div>
       </Section>
     </main>

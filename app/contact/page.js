@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
-import ContactInfo from "@/components/ContactInfo";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ContactPage() {
@@ -8,14 +7,10 @@ export default function ContactPage() {
     <main className="min-h-screen pt-32 pb-20">
       <HeroSection
         highlightedText="Contact Us"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum pretium urna et euismod. Donec commodo sagittis molestie. Quisque sollicitudin dui id leo maximus rhoncus. Nulla facilisi. Morbi ac neque quis urna luctus luctus vitae nec mi. Mauris arcu lacus, aliquam ac neque vitae."
+        description="Have questions about our filtration solutions? We're here to help. Whether you need technical specifications, custom orders, or expert advice on the right filtration system for your needs, our team is ready to assist you. Visit our facility or reach out to discuss how we can support your filtration requirements."
         minHeight="py-24"
         waveType="short"
       />
-
-      <Section background="gradient">
-        <ContactInfo className="mb-24" />
-      </Section>
 
       <Section background="white" title="Visit Us!" titleHighlight="Us">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -74,21 +69,18 @@ export default function ContactPage() {
 
           <ScrollReveal animation="fadeInRight">
             <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-3xl p-8 shadow-2xl border-4 border-blue-600 hover:shadow-3xl hover:scale-[1.02] transition-all duration-300">
-              <div className="bg-white rounded-2xl p-4 h-96 flex items-center justify-center group hover:bg-gray-50 transition-colors">
-                <div className="text-center text-gray-400 group-hover:text-gray-600 transition-colors">
-                  <svg
-                    className="w-20 h-20 mx-auto mb-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p className="text-xl font-semibold">Interactive Map</p>
-                  <p className="text-sm mt-2">Map integration placeholder</p>
+              <div className="bg-white rounded-2xl p-4 overflow-hidden">
+                <div className="relative w-full h-96">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.201680084301!2d101.60096440000001!3d3.0405373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4cb4115fee09%3A0x73c8c3e0a67c8a56!2sQualiplus%20Sdn.%20Bhd.!5e0!3m2!1sen!2smy!4v1761381022315!5m2!1sen!2smy"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0 rounded-xl"
+                  ></iframe>
                 </div>
               </div>
             </div>

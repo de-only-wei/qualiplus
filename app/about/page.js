@@ -18,7 +18,7 @@ export default function AboutPage() {
         title="Clean solutions at your"
         highlightedText="core."
         subtitle="About Us"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat lorem quis tortor aliquam, et accumsan arcu mollis. Curabitur rutrum enim in congue vehicula. Morbi cursus sit amet massa at congue. Morbi nec massa cursus, posuere nisl rhoncus, tincidunt orci. Aliquam venenatis convallis dolor et euismod. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse tincidunt mi vel lacus tempus tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+        description="Qualiplus Sdn. Bhd. has been at the forefront of filtration technology, providing innovative solutions for industrial air and water purification. Our commitment to quality and innovation drives us to develop products that not only meet but exceed industry standards. With state-of-the-art manufacturing facilities and a dedicated team of experts, we serve clients across diverse industries who demand reliable, efficient, and cost-effective filtration solutions."
         waveType="short"
         minHeight="py-32"
       />

@@ -5,7 +5,7 @@ export default function Section({
   title,
   titleHighlight,
   subtitle,
-  background = "white", // "white", "gray", "blue", "gradient"
+  background = "white", // "white", "gray", "blue", "gradient", "transparent"
   padding = "py-24",
   maxWidth = "max-w-7xl",
   titleAnimation = "fadeInUp",
@@ -16,6 +16,7 @@ export default function Section({
     gray: "bg-gradient-to-br from-gray-50 to-white",
     blue: "bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700",
     gradient: "bg-gradient-to-br from-gray-50 to-white",
+    transparent: "bg-transparent",
   };
 
   const titleColor = background === "blue" ? "text-white" : "text-gray-900";
