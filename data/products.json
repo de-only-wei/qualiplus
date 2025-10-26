@@ -7,6 +7,8 @@
       "category": "dust",
       "shortDescription": "High-efficiency dust filtration cartridges designed for industrial applications.",
       "fullDescription": "Our premium dust cartridges provide superior filtration performance for demanding industrial environments. Engineered with advanced materials including gauze, gabardine, and solid concrete layers, these cartridges deliver exceptional dust capture efficiency while maintaining optimal airflow. Perfect for manufacturing facilities, workshops, and heavy-duty applications.",
+      "visualizationType": "svg-filter",
+      "filterSvgId": "dust-cartridge-filter",
       "images": ["/gauze-00.jpeg", "/gauze-01.jpeg"],
       "tags": ["Industrial Grade", "High Efficiency", "Multi-Layer"],
       "specifications": {

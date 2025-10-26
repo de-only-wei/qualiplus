@@ -1,0 +1,130 @@
+.filterContainer {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filterSvg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Back Layer - largest box */
+.backLayer {
+  transform-origin: 230px 220px;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backLayerHover {
+  transform-origin: 230px 220px;
+  transform: translate(7px, 9px) rotate(-2deg);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Middle Layer */
+.middleLayer {
+  transform-origin: 220px 205px;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.middleLayerHover {
+  transform-origin: 220px 205px;
+  transform: translate(-30px, -6px) rotate(-5deg);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+/* Front Layer - main grid */
+.frontLayer {
+  transform-origin: 200px 190px;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.frontLayerHover {
+  transform-origin: 200px 190px;
+  transform: translate(-54px, -22px) rotate(-8deg);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+/* Decorative element bottom left */
+.decorBottomLeft {
+  transform-origin: 105px 40px;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  opacity: 0;
+}
+
+.decorBottomLeftHover {
+  transform-origin: 105px 40px;
+  transform: translate(0, 0) rotate(0deg) scale(1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  opacity: 1;
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Decorative element top right */
+.decorTopRight {
+  transform-origin: 345px 330px;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+  opacity: 0;
+}
+
+.decorTopRightHover {
+  transform-origin: 345px 330px;
+  transform: translate(0, 0) rotate(0deg) scale(1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+  opacity: 1;
+  animation: float 2s ease-in-out infinite 0.5s;
+}
+
+/* Decorative element bottom center */
+.decorBottomCenter {
+  transform-origin: 47px 355px;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  opacity: 0;
+}
+
+.decorBottomCenterHover {
+  transform-origin: 47px 355px;
+  transform: translate(0, 0) rotate(0deg) scale(1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  opacity: 1;
+  animation: rotateElement 2s ease-in-out infinite;
+}
+
+/* Label animations - Hidden by default, visible on hover */
+.labelHidden {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.labelVisible {
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+/* Rotation animation */
+@keyframes rotateElement {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+}
+
+/* Add subtle scale on hover for the whole container */
+.filterContainer:hover .filterSvg {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}

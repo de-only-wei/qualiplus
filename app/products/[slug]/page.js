@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import Section from "@/components/Section";
+import ProductVisualization from "@/components/ProductVisualization";
 import {
   getProductBySlug,
   getRelatedProducts,
@@ -42,29 +43,15 @@ export default function ProductDetailPage({ params }) {
     <main className="min-h-screen pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white">
       <Section>
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Product Image */}
+          {/* Product Image or SVG Visualization */}
           <ScrollReveal animation="fadeInLeft">
             <div className="space-y-8">
               <div className="bg-white rounded-3xl p-12 shadow-2xl border border-gray-200">
                 <div className="aspect-square flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl relative overflow-hidden">
-                  {product.images[0] &&
-                  !product.images[0].includes("placeholder") ? (
-                    <Image
-                      src={product.images[0]}
-                      alt={product.name}
-                      fill
-                      className="object-contain p-8"
-                    />
-                  ) : (
-                    <div className="text-center">
-                      <div className="w-64 h-64 mx-auto bg-white rounded-full shadow-inner mb-6 flex items-center justify-center">
-                        <div className="w-48 h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full animate-pulse-subtle"></div>
-                      </div>
-                      <p className="text-gray-400 font-medium">
-                        {product.name}
-                      </p>
-                    </div>
-                  )}
+                  <ProductVisualization
+                    product={product}
+                    className="w-full h-full"
+                  />
                 </div>
               </div>
 
@@ -161,20 +148,36 @@ export default function ProductDetailPage({ params }) {
                     {product.specifications.layers &&
                       product.specifications.layers.length > 0 && (
                         <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border-2 border-gray-200">
-                          <div className="relative h-96 flex items-center justify-center">
-                            <div className="text-center space-y-4">
-                              <div className="w-64 h-64 mx-auto border-4 border-gray-400 rounded-lg relative animate-pulse-subtle">
-                                <div className="absolute inset-2 border-2 border-gray-300"></div>
-                                <div className="absolute inset-4 border-2 border-gray-300"></div>
+                          <div className="relative min-h-96 flex items-center justify-center">
+                            {product.visualizationType === "svg-filter" &&
+                            product.filterSvgId ? (
+                              <div className="w-full max-w-lg mx-auto p-4">
+                                <ProductVisualization product={product} />
+                                <div className="flex justify-around text-sm font-semibold text-gray-600 mt-6">
+                                  {product.specifications.layers.map(
+                                    (layer, index) => (
+                                      <span key={index} className="px-2">
+                                        {layer}
+                                      </span>
+                                    )
+                                  )}
+                                </div>
                               </div>
-                              <div className="flex justify-around text-sm font-semibold text-gray-600">
-                                {product.specifications.layers.map(
-                                  (layer, index) => (
-                                    <span key={index}>{layer}</span>
-                                  )
-                                )}
+                            ) : (
+                              <div className="text-center space-y-4">
+                                <div className="w-64 h-64 mx-auto border-4 border-gray-400 rounded-lg relative animate-pulse-subtle">
+                                  <div className="absolute inset-2 border-2 border-gray-300"></div>
+                                  <div className="absolute inset-4 border-2 border-gray-300"></div>
+                                </div>
+                                <div className="flex justify-around text-sm font-semibold text-gray-600">
+                                  {product.specifications.layers.map(
+                                    (layer, index) => (
+                                      <span key={index}>{layer}</span>
+                                    )
+                                  )}
+                                </div>
                               </div>
-                            </div>
+                            )}
                           </div>
                         </div>
                       )}

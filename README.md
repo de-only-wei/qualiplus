@@ -264,6 +264,24 @@ All components have sensible defaults:
 - **Borders**: Rounded corners
 - **Typography**: Bold headings, readable body text
 
+## 📚 Documentation
+
+### Content Management
+
+- **[PRODUCTS_GUIDE.md](./PRODUCTS_GUIDE.md)** - Complete guide for managing products
+  - Adding/editing products
+  - Image management
+  - SVG filter animations
+  - Troubleshooting tips
+  - Quick reference checklists
+
+### Technical Documentation
+
+- **[FILTER_VISUALIZATION_GUIDE.md](./FILTER_VISUALIZATION_GUIDE.md)** - SVG animation system
+- **[IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md)** - Technical implementation
+- **[SYSTEM_ARCHITECTURE.md](./SYSTEM_ARCHITECTURE.md)** - System architecture overview
+- **[data/README.md](./data/README.md)** - Data structure reference
+
 ## 🔧 Technologies
 
 - **Next.js 15**: React framework with App Router

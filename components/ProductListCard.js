@@ -1,29 +1,36 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import ProductVisualization from "./ProductVisualization";
 
 export default function ProductListCard({ product }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Check if product uses SVG filter visualization
+  const usesSvgVisualization =
+    product.visualizationType === "svg-filter" && product.filterSvgId;
+
   return (
     <Link href={`/products/${product.slug}`} className="group block">
       <div className="bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-4 border-blue-600 hover:border-blue-400 h-full flex flex-col">
-        {/* Product Image */}
-        <div className="aspect-square bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
-          {product.images[0] && !product.images[0].includes("placeholder") ? (
-            <Image
-              src={product.images[0]}
-              alt={product.name}
-              fill
-              className="object-cover group-hover:scale-110 transition-transform duration-300"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700">
-              <div className="text-white text-center">
-                <div className="text-3xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {product.name}
-                </div>
-              </div>
+        {/* Product Image or SVG Visualization */}
+        <div
+          className="aspect-square bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden flex items-center justify-center"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {usesSvgVisualization ? (
+            <div className="w-full h-full p-8 flex items-center justify-center">
+              <ProductVisualization product={product} />
             </div>
+          ) : (
+            <ProductVisualization
+              product={product}
+              className="absolute inset-0 group-hover:scale-110 transition-transform duration-300"
+            />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
         </div>
 
         {/* Product Info */}

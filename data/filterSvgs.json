@@ -1,0 +1,78 @@
+{
+  "dustCartridge": {
+    "id": "dust-cartridge-filter",
+    "name": "Dust Cartridge Filter",
+    "type": "animated",
+    "viewBox": "0 0 435 446",
+    "layers": [
+      {
+        "name": "backLayer",
+        "label": "Back Layer",
+        "paths": [
+          {
+            "d": "M329.475 294.38L147.366 334L138.409 324.787L320.518 103.17L329.475 112.388V294.38Z",
+            "fill": "white",
+            "stroke": "#050606"
+          },
+          {
+            "d": "M320.302 285.212L138.193 324.833V142.841L320.302 103.216V285.212Z",
+            "fill": "white",
+            "stroke": "#050606"
+          },
+          {
+            "d": "M320.307 285.189L329.264 294.402L320.307 285.189Z",
+            "fill": "white"
+          },
+          {
+            "d": "M320.307 285.189L329.264 294.402",
+            "stroke": "#050606"
+          }
+        ]
+      },
+      {
+        "name": "middleLayer",
+        "label": "Middle Layer - Gauze Pattern",
+        "hasDotsPattern": true
+      },
+      {
+        "name": "frontLayer",
+        "label": "Front Layer - Main Grid",
+        "hasGridPattern": true
+      }
+    ],
+    "annotations": [
+      {
+        "label": "gauze",
+        "x": "42.8153",
+        "y": "53.82"
+      },
+      {
+        "label": "gabodine",
+        "x": "16.9286",
+        "y": "405.938"
+      },
+      {
+        "label": "Solid concrete",
+        "x": "271.824",
+        "y": "376.32"
+      }
+    ],
+    "decorativeElements": [
+      {
+        "name": "bottomLeft",
+        "type": "float",
+        "color": "#0F1BF4"
+      },
+      {
+        "name": "topRight",
+        "type": "float",
+        "color": "#0F1BF4"
+      },
+      {
+        "name": "bottomCenter",
+        "type": "rotate",
+        "color": "#0F1BF4"
+      }
+    ]
+  }
+}

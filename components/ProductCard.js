@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import ProductVisualization from "./ProductVisualization";
 
 export default function ProductCard({
   title,
@@ -11,9 +12,25 @@ export default function ProductCard({
   imageExploded,
   href,
   annotations,
+  // New props for full product support
+  visualizationType,
+  filterSvgId,
+  name,
+  shortDescription,
 }) {
   const [isCardHovered, setIsCardHovered] = useState(false);
   const [isImageHovered, setIsImageHovered] = useState(false);
+
+  // Build product object for ProductVisualization
+  const product = {
+    name: name || title,
+    visualizationType,
+    filterSvgId,
+    images: [image, imageExploded].filter(Boolean),
+  };
+
+  // Use SVG filter visualization for dust cartridges
+  const useSvgVisualization = visualizationType === "svg-filter" && filterSvgId;
 
   return (
     <Link href={href || "#"} className="block">
@@ -29,16 +46,24 @@ export default function ProductCard({
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {/* Left: Content */}
             <ContentSection
-              title={title}
-              description={description}
+              title={title || name}
+              description={description || shortDescription}
               tags={tags}
             />
 
             {/* Right: Illustration */}
-            <IllustrationSection
-              isImageHovered={isImageHovered}
-              setIsImageHovered={setIsImageHovered}
-            />
+            {useSvgVisualization ? (
+              <SvgFilterSection
+                product={product}
+                isImageHovered={isImageHovered}
+                setIsImageHovered={setIsImageHovered}
+              />
+            ) : (
+              <IllustrationSection
+                isImageHovered={isImageHovered}
+                setIsImageHovered={setIsImageHovered}
+              />
+            )}
           </div>
 
           {/* Navigation arrow - appears on image hover */}
@@ -262,6 +287,21 @@ function Annotation({ path, label, labelX, labelY }) {
         {label}
       </text>
     </>
+  );
+}
+
+// SVG Filter Section - displays animated filter visualization
+function SvgFilterSection({ product, isImageHovered, setIsImageHovered }) {
+  return (
+    <div
+      className="relative flex items-center justify-center min-h-[300px]"
+      onMouseEnter={() => setIsImageHovered(true)}
+      onMouseLeave={() => setIsImageHovered(false)}
+    >
+      <div className="w-full max-w-md transform scale-90 md:scale-100">
+        <ProductVisualization product={product} />
+      </div>
+    </div>
   );
 }
 
