@@ -91,7 +91,7 @@ function BlueShadowLayer() {
 function MainCard({ isCardHovered, setIsCardHovered, children }) {
   return (
     <div
-      className="relative overflow-hidden rounded-3xl bg-white p-12 transition-all duration-500"
+      className="relative overflow-hidden rounded-3xl bg-white p-12 transition-all duration-200"
       onMouseEnter={() => setIsCardHovered(true)}
       onMouseLeave={() => setIsCardHovered(false)}
       style={{
@@ -224,7 +224,7 @@ function IllustrationSection({ isImageHovered, setIsImageHovered }) {
 
         {/* Annotations - visible on hover */}
         <g
-          className="transition-opacity duration-300"
+          className="transition-opacity duration-150"
           style={{ opacity: isImageHovered ? 1 : 0 }}
         >
           <Annotation
@@ -309,7 +309,7 @@ function SvgFilterSection({ product, isImageHovered, setIsImageHovered }) {
 function NavigationArrow({ isImageHovered }) {
   return (
     <div
-      className="absolute bottom-8 right-8 transition-all duration-300"
+      className="absolute bottom-8 right-8 transition-all duration-150"
       style={{
         opacity: isImageHovered ? 1 : 0,
         transform: isImageHovered ? "translateX(0)" : "translateX(20px)",

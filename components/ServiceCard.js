@@ -1,16 +1,59 @@
+"use client";
+
+import { useState, useRef } from "react";
+
 export default function ServiceCard({ title }) {
+  const [isActive, setIsActive] = useState(false);
+  const timeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    // Activate the hover effect
+    setIsActive(true);
+
+    // Reset after 400ms
+    timeoutRef.current = setTimeout(() => {
+      setIsActive(false);
+    }, 400);
+  };
+
   return (
-    <div className="bg-white rounded-3xl p-8 border-4 border-blue-600 hover:border-blue-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group overflow-hidden relative">
+    <div
+      className={`bg-white rounded-3xl p-8 border-4 overflow-hidden relative transition-all duration-300 ${
+        isActive
+          ? "border-blue-700 shadow-2xl -translate-y-2"
+          : "border-blue-600 shadow-md"
+      }`}
+      onMouseEnter={handleMouseEnter}
+    >
       {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div
+        className={`absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 transition-opacity duration-300 ${
+          isActive ? "opacity-100" : "opacity-0"
+        }`}
+      ></div>
 
       <div className="flex items-center gap-4 relative z-10">
-        <h3 className="text-2xl font-bold flex-1 text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
+        <h3
+          className={`text-2xl font-bold flex-1 transition-colors duration-300 ${
+            isActive ? "text-blue-700" : "text-gray-900"
+          }`}
+        >
           {title}
         </h3>
-        <div className="w-14 h-14 border-4 border-blue-600 rounded-xl flex items-center justify-center group-hover:bg-blue-600 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-md group-hover:shadow-lg">
+        <div
+          className={`w-14 h-14 border-4 border-blue-600 rounded-xl flex items-center justify-center transition-all duration-300 shadow-md ${
+            isActive ? "bg-blue-600 scale-110 rotate-12 shadow-lg" : ""
+          }`}
+        >
           <svg
-            className="w-7 h-7 text-blue-600 group-hover:text-white transition-all duration-300 transform group-hover:scale-110"
+            className={`w-7 h-7 transition-all duration-300 transform ${
+              isActive ? "text-white scale-110" : "text-blue-600"
+            }`}
             fill="currentColor"
             viewBox="0 0 20 20"
           >

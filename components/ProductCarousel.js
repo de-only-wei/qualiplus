@@ -96,7 +96,7 @@ export default function ProductCarousel({ products, className = "" }) {
 
         {/* Left fade-out gradient */}
         <div
-          className="absolute left-0 top-0 bottom-0 w-32 md:w-48 pointer-events-none z-20 transition-opacity duration-300"
+          className="absolute left-0 top-0 bottom-0 w-32 md:w-48 pointer-events-none z-20 transition-opacity duration-150"
           style={{
             background:
               "linear-gradient(to right, rgb(243, 244, 246) 0%, rgba(243, 244, 246, 0) 100%)",
@@ -106,7 +106,7 @@ export default function ProductCarousel({ products, className = "" }) {
 
         {/* Right fade-out gradient */}
         <div
-          className="absolute right-0 top-0 bottom-0 w-32 md:w-48 pointer-events-none z-20 transition-opacity duration-300"
+          className="absolute right-0 top-0 bottom-0 w-32 md:w-48 pointer-events-none z-20 transition-opacity duration-150"
           style={{
             background:
               "linear-gradient(to left, rgba(249, 250, 251, 1) 0%, rgba(249, 250, 251, 0) 100%)",
@@ -150,7 +150,7 @@ function NavigationButton({ direction, onClick, className }) {
   return (
     <button
       onClick={onClick}
-      className={`hidden md:flex absolute top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-blue-600 rounded-full p-3 lg:p-4 shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl items-center justify-center ${className}`}
+      className={`hidden md:flex absolute top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-blue-600 rounded-full p-3 lg:p-4 shadow-xl transition-all duration-150 hover:scale-110 hover:shadow-2xl items-center justify-center ${className}`}
       aria-label={`${isPrevious ? "Previous" : "Next"} product`}
     >
       <svg
@@ -178,7 +178,7 @@ function DotsIndicator({ products, currentIndex, onDotClick }) {
         <button
           key={index}
           onClick={() => onDotClick(index)}
-          className={`transition-all duration-300 rounded-full ${
+          className={`transition-all duration-150 rounded-full ${
             index === currentIndex
               ? "w-8 md:w-12 h-2 md:h-3 bg-blue-600"
               : "w-2 md:w-3 h-2 md:h-3 bg-blue-200 hover:bg-blue-400"

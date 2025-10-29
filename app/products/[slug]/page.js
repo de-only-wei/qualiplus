@@ -21,7 +21,7 @@ export default function ProductDetailPage({ params }) {
 
   if (!product) {
     return (
-      <main className="min-h-screen pt-32 pb-20 flex items-center justify-center">
+      <main className="min-h-screen pb-20 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Product Not Found
@@ -40,7 +40,7 @@ export default function ProductDetailPage({ params }) {
   const relatedProducts = getRelatedProducts(product.id);
 
   return (
-    <main className="min-h-screen pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white">
+    <main className="min-h-screen pb-20 bg-gradient-to-br from-gray-50 to-white">
       <Section>
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Product Image or SVG Visualization */}

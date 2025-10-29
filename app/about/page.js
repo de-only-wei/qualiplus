@@ -13,14 +13,13 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen pt-32 pb-20">
+    <main className="min-h-screen pb-20">
       <HeroSection
         title="Clean solutions at your"
         highlightedText="core."
-        subtitle="About Us"
         description="Qualiplus Sdn. Bhd. has been at the forefront of filtration technology, providing innovative solutions for industrial air and water purification. Our commitment to quality and innovation drives us to develop products that not only meet but exceed industry standards. With state-of-the-art manufacturing facilities and a dedicated team of experts, we serve clients across diverse industries who demand reliable, efficient, and cost-effective filtration solutions."
         waveType="short"
-        minHeight="py-32"
+        minHeight="py-24"
       />
 
       <Section background="gradient" padding="py-24">

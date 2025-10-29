@@ -29,7 +29,7 @@ export default function ProductsPage() {
   });
 
   return (
-    <main className="min-h-screen pt-32 pb-20">
+    <main className="min-h-screen pb-20">
       <HeroSection
         highlightedText="Our Products"
         description="Explore our comprehensive range of industrial filtration solutions. From high-efficiency dust cartridges and pleated filters for air purification to activated carbon and reverse osmosis systems for water treatment, each product is engineered for superior performance and long-lasting reliability in demanding applications."
